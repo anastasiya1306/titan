@@ -1,0 +1,186 @@
+    /* Основной контейнер */
+    .product-detail-container {
+        max-width: 1200px;
+        margin: 40px auto;
+        padding: 0 20px;
+    }
+
+    /* Кнопка "Назад" */
+    .back-btn {
+        background: linear-gradient(135deg, #e67e22, #d35400);
+        color: #fff;
+        font-weight: bold;
+        padding: 8px 16px;
+        border-radius: 8px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        display: inline-block;
+    }
+
+    .back-btn:hover {
+        background: linear-gradient(135deg, #f39c12, #e67e22);
+        transform: scale(1.05);
+        color: #fff;
+        text-decoration: none;
+    }
+
+    .product-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 30px;
+    }
+
+    /* Заголовок товара */
+    .product-title {
+        text-align: center;
+        font-size: 2.2rem;
+        font-weight: bold;
+        color: #ffffff;
+        margin: 0; /* УБРАТЬ все отступы */
+        padding: 0;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        white-space: normal; /* Разрешает перенос строк */
+        word-wrap: break-word; /* Переносит длинные слова */
+        overflow-wrap: break-word; /* Современный стандарт */
+        line-height: 1.4; /* Улучшает читаемость */
+        max-width: 100%; /* Убедитесь, что нет ограничения */
+        width: 100%; /* Занимает всю доступную ширину */
+    }
+
+    /* Основная секция товара */
+    .product-main {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 40px;
+        flex-wrap: wrap;
+    }
+
+    /* Изображение */
+    .product-image {
+        flex: 1;
+        min-width: 350px;
+        text-align: center;
+    }
+
+    .product-image img {
+        width: 100%;
+        max-width: 480px;
+        border-radius: 12px;
+        object-fit: cover;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Видео */
+    .product-video {
+        flex: 1;
+        min-width: 350px;
+        text-align: center;
+    }
+
+    .product-video video,
+    .product-video iframe {
+        width: 200%;
+        max-width: 700px;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Информация о товаре */
+    .product-info {
+        margin-top: 40px;
+    }
+
+    .product-price {
+        color: #e67e22;
+        font-size: 1.6rem;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    .product-description {
+        font-size: 1.05rem;
+        line-height: 1.6;
+        color: #444;
+        margin-bottom: 30px;
+    }
+
+    /* Адаптивность */
+    @media (max-width: 992px) {
+        .product-main {
+            flex-direction: column;
+            align-items: center;
+        }
+        .product-video {
+            margin-top: 20px;
+        }
+    }
+
+    .tabs-container {
+        margin-top: 40px;
+        background: #fff;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .tabs {
+        display: flex;
+        gap: 10px;
+        border-bottom: 2px solid #ddd;
+        margin-bottom: 20px;
+    }
+
+    .tab-btn {
+        background: none;
+        border: none;
+        font-weight: bold;
+        font-size: 1.1rem;
+        padding: 10px 20px;
+        cursor: pointer;
+        color: #555;
+        position: relative;
+        transition: all 0.3s ease;
+    }
+
+    .tab-btn:hover {
+        color: #e67e22;
+    }
+
+    .tab-btn.active {
+        color: #e67e22;
+        border-bottom: 3px solid #e67e22;
+    }
+
+    .tab-content {
+        display: none;
+    }
+
+    .tab-content.active {
+        display: block;
+        animation: fadeIn 0.3s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+        from {opacity: 0;}
+        to {opacity: 1;}
+    }
+
+    .product-specs-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    }
+
+    .product-specs-table td {
+        border: 1px solid #ddd;
+        padding: 10px;
+        vertical-align: top;
+    }
+
+    .product-specs-table td:first-child {
+        font-weight: bold;
+        background-color: #fafafa;
+        width: 35%;
+    }

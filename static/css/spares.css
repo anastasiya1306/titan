@@ -1,0 +1,114 @@
+/* Стили для статьи */
+
+/* Вступительный абзац */
+.supplier-info .intro {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #f0f0f0;
+    margin-bottom: 30px;
+    line-height: 1.7;
+}
+
+/* Стили для подзаголовков (оранжевые с фоном) */
+.info-subtitle {
+    font-size: 1.8rem;
+    margin: 35px 0 15px 0;
+    color: #fff;
+    padding-bottom: 8px;
+    border-bottom: 2px solid rgba(243, 156, 18, 0.4); /* Тонкая линия под заголовком */
+}
+.info-subtitle span {
+    background-color: rgba(243, 156, 18, 0.85); /* Неяркий оранжевый фон */
+    color: #2c3e50; /* Темный текст для контраста */
+    padding: 8px 15px;
+    border-radius: 5px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+    font-weight: bold;
+}
+
+/* Стили для красивого списка */
+.styled-list {
+    list-style: none; /* Убираем стандартные маркеры */
+    padding-left: 0;
+    margin: 20px 0;
+}
+.styled-list li {
+    padding: 10px 0 10px 30px; /* Отступ слева для иконки */
+    margin-bottom: 8px;
+    line-height: 1.5;
+    color: #e0e0e0;
+    position: relative;
+    border-left: 3px solid transparent;
+    transition: all 0.3s ease;
+}
+.styled-list li:hover {
+    border-left-color: #f39c12;
+    background: rgba(255, 255, 255, 0.03);
+}
+.styled-list li:before {
+    content: "▸";
+    color: #f39c12;
+    font-weight: bold;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}
+
+/* Выделение важных частей в тексте */
+.supplier-info strong {
+    color: #f8c471; /* Светло-оранжевый для выделения */
+}
+
+/* Заметка (например, после первого списка) */
+.supplier-info .note {
+    font-style: italic;
+    color: #bdc3c7;
+    border-left: 4px solid #3498db;
+    padding-left: 15px;
+    margin: 20px 0;
+}
+
+/* Заключительный абзац */
+.supplier-info .conclusion {
+    font-size: 1.3rem;
+    background: rgba(52, 152, 219, 0.1); /* Легкий голубой фон */
+    border: 1px solid rgba(52, 152, 219, 0.3);
+    padding: 20px;
+    border-radius: 8px;
+    color: #fff;
+    margin-top: 30px;
+}
+
+/* Стили для картинки под статьей */
+.article-image {
+    max-width: 900px;
+    margin: 50px auto 20px;
+    text-align: center;
+}
+.article-image img {
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+.image-caption {
+    font-style: italic;
+    color: #95a5a6;
+    margin-top: 10px;
+    font-size: 1rem;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.8);
+}
+
+/* Адаптивность для подзаголовков и списков */
+@media (max-width: 768px) {
+    .info-subtitle {
+        font-size: 1.5rem;
+    }
+    .info-subtitle span {
+        padding: 6px 12px;
+    }
+    .styled-list li {
+        padding-left: 25px;
+    }
+}
