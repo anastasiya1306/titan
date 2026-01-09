@@ -1,0 +1,38 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}Подкатегории{% endblock %}
+
+{% block extra_styles %}
+<link rel="stylesheet" href="{% static 'css/subcategories_category.css' %}">
+<link rel="stylesheet" href="{% static 'css/supplier.css' %}">
+{% endblock %}
+
+{% block content %}
++
+<div class="container-fluid my-3">
+    <a href="{% url 'main:home' %}" class="back-btn">← На главную</a>
+</div>
+
+
+<div class="container my-5">
+    <div class="row g-4">
+        {% for sub in subcategories %}
+        <div class="col-md-3 col-sm-6">
+            <a href="{% url 'main:products_by_subcategory' sub.id %}" style="text-decoration: none;">
+                <div class="subcategory-card">
+                    {% if sub.image %}
+                        <img src="{{ sub.image.url }}" alt="{{ sub.name }}">
+                    {% else %}
+                        <img src="{% static 'img/no-image.png' %}" alt="Нет изображения">
+                    {% endif %}
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% include 'includes/inc_spares.html' %}
+
+{% endblock %}

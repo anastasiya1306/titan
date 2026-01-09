@@ -1,0 +1,184 @@
+/* Контейнер меню */
+       .menu-container {
+           display: flex;
+           justify-content: flex-start;
+           margin-top: 30px;
+           margin-left: 10px;
+       }
+
+
+     /* Категории */
+       .category-list {
+           list-style: none;
+           padding: 0;
+           margin: 0;
+           width: 220px;
+       }
+
+       .category-list > li {
+           position: relative;
+           margin-bottom: 10px;
+       }
+
+       .category-box {
+           background: linear-gradient(135deg, #e67e22, #d35400); /* красивый градиент */
+           padding: 14px 24px;
+           cursor: pointer;
+           border-radius: 10px;
+           transition: transform 0.2s, background 0.3s;
+           /* transform: skewX(-10deg);  наклон кнопки */
+           box-shadow: 2px 4px 10px rgba(0,0,0,0.4);
+       }
+
+       .category-box:hover {
+           background: linear-gradient(135deg, #f39c12, #e67e22);
+           transform: skewX(-10deg) scale(1.05);
+       }
+
+              /* Чтобы текст не был кривым внутри */
+       .category-box span {
+           display: inline-block;
+           transform: skewX(0deg); /* выравнивание текста */
+           font-weight: bold;
+           color: #fff;
+       }
+
+       /* Подкатегории */
+       .submenu {
+           display: none;
+            position: absolute;
+            top: 0;
+            left: calc(100% + 5px); /* добавил зазор в 10px */
+            background: linear-gradient(145deg, #ff9a36, #e56b1f);
+            padding: 12px 18px;
+            border-radius: 12px;
+            list-style: none;
+            margin: 0;
+            z-index: 1000;
+            box-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+            opacity: 0;
+            transform: translateX(-10px);  /* плавное появление */
+            transition: all 0.25s ease-in-out;
+        }
+
+
+       /* показываем подкатегории */
+       .category-list > li:hover .submenu {
+           display: block;
+            opacity: 1;
+            transform: translateX(0);
+       }
+
+       /* Сами элементы подкатегорий */
+       .submenu li {
+           padding: 10px 15px;
+           margin: 0;
+           background: transparent;
+           transition: all 0.3s ease; /* Увеличил время анимации */
+           border-radius: 6px; /* Добавил скругление всегда */
+       }
+        /* подчеркнем подкатегории */
+       .submenu li:hover {
+           background: #d35400;
+           transform: translateX(5px) scale(1.02); /* Плавное смещение вместо skew */
+           box-shadow: 0 2px 6px rgba(0,0,0,0.2); /* Более мягкая тень */
+       }
+
+       .submenu a {
+           text-decoration: none;
+           color: #fff;
+           font-weight: 500;
+           display: block;
+       }
+
+       .menu-section {
+           display: flex;
+           align-items: flex-start;
+           margin: 30px 40px;
+       }
+
+       .menu-container {
+           flex: 1;
+       }
+
+     .menu-image {
+            flex: 0 0 auto;
+            display: flex;
+            justify-content: center; /* центрируем картинку внутри блока */
+       }
+
+
+       .menu-image img {
+           max-width: 900px;
+           border-radius: 12px;
+           margin-left: 0px;
+           box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+       }
+
+    .advantages-section {
+      background-color: #ffffff;
+      border-radius: 25px 25px 0 0;
+      padding: 60px 40px;
+      box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.05);
+      width: 99.5vw;           /* блок на всю ширину окна */
+      position: relative;
+      left: 50%;
+      right: 50%;
+      margin-left: -50vw;     /* выравниваем, чтобы белый фон растянулся от края до края */
+      margin-right: -50vw;
+    }
+
+    .advantages-container {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .adv-item {
+      flex: 1 1 250px;
+      background: #fff;
+      border: 2px solid #f2f2f2;
+      border-radius: 12px;
+      border-color: #ff5722;
+      padding: 20px 25px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      position: relative;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .adv-item:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .adv-number {
+      position: absolute;
+      top: -12px;
+      right: -12px;
+      background-color: #ff5722;
+      color: #fff;
+      font-weight: bold;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+    }
+
+    .adv-item h3 {
+      color: #e74c3c;
+      font-size: 20px;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+
+    .adv-item p {
+      color: #333;
+      font-size: 16px;
+      line-height: 1.4;
+    }

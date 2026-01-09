@@ -1,0 +1,80 @@
+{% extends 'main/base.html' %}
+{% load filters %}
+{% load static %}
+
+{% block title %}{{ product.name }}{% endblock %}
+
+{% block extra_styles %}
+<link rel="stylesheet" href="{% static 'css/product_detail.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid my-3">
+    <a href="{% url 'main:products_by_subcategory' product.subcategory.id %}" class="back-btn">← Назад к категории</a>
+</div>
+
+<h1 class="product-title">{{ product.name }}</h1>
+
+<div class="product-detail-container">
+    <!-- Основной блок: фото и видео -->
+    <div class="product-main">
+        <div class="product-image">
+                <img src="{{ product.image.url }}" alt="{{ product.name }}">
+        </div>
+
+        <div class="product-video">
+            {% if product.video %}
+                <video controls>
+                    <source src="{{ product.video.url }}" type="video/mp4">
+                    Ваш браузер не поддерживает видео.
+                </video>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+<div class="tabs-container">
+    <div class="tabs">
+        <button class="tab-btn active" data-tab="description">Описание</button>
+        <button class="tab-btn" data-tab="specs">Характеристики</button>
+    </div>
+
+    <div class="tab-content active" id="description">
+        <div class="product-description">
+            {{ product.description|linebreaksbr }}
+        </div>
+    </div>
+
+    <div class="tab-content" id="specs">
+        <table class="product-specs-table">
+            {% for name, value in product.characteristics|split_characteristics %}
+            <tr>
+                <td><strong>{{ name }}</strong></td>
+                <td>{{ value }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const tabs = document.querySelectorAll('.tab-btn');
+        const contents = document.querySelectorAll('.tab-content');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Сброс активных
+                tabs.forEach(t => t.classList.remove('active'));
+                contents.forEach(c => c.classList.remove('active'));
+
+                // Активируем выбранную вкладку
+                tab.classList.add('active');
+                document.getElementById(tab.dataset.tab).classList.add('active');
+            });
+        });
+    });
+</script>
+
+{% endblock %}

@@ -1,0 +1,95 @@
+/* Шапка с логотипом */
+        .top-header {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .logo-img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Контакты в правом верхнем углу */
+        .header-contacts {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            z-index: 10;
+        }
+
+        /* Стили для овальных блоков */
+        .contact-bubble {
+            background-color: white;
+            color: black !important;
+            padding: 10px 18px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            border: 2px solid white;
+            text-align: center;
+            display: inline-block;
+        }
+
+        .contact-bubble:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            border-color: #ff9900;
+            background-color: #f8f9fa;
+        }
+
+        /* Специальный стиль только для почты */
+        .contact-bubble.email {
+            background-color: transparent;
+            color: white !important;
+            border: 2px solid white;
+        }
+
+        .contact-bubble.email:hover {
+            background-color: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
+        }
+
+
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            .header-contacts {
+                top: 10px;
+                right: 10px;
+            }
+
+            .contact-bubble {
+                padding: 8px 14px;
+                font-size: 0.85rem;
+                border-width: 1.5px; /* Тоньше рамка на мобильных */
+                background-color: rgba(255,255,255,0.1); /* Легкий фон для читаемости */
+            }
+
+             /* Если делаешь прозрачный стиль */
+            .contact-bubble.email {
+                background-color: rgba(255,255,255,0.1);
+                border-width: 1.5px;
+            }
+        }
+
+
+        /* Общий фон */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-image: url("/media/fon_gradient.png"); /* путь к твоей картинке */
+            background-size: cover; /* растягивает на весь экран */
+            background-repeat: no-repeat; /* не повторять */
+            background-position: center center; /* центрировать */
+            background-attachment: fixed; /* фон будет неподвижен при прокрутке */
+            color: #333333;
+        }

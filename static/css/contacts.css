@@ -1,0 +1,111 @@
+        /* ---------- Контактный блок ---------- */
+
+        .contacts-section {
+            background-color: #3b3a3a;
+            padding: 60px 0;
+            text-align: center;
+            border-top: 1px solid #eaeaea;
+        }
+
+        .contacts-section h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 40px;
+            color: #ffffff;
+        }
+
+        /* Контейнер с карточками */
+        .contacts-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
+            max-width: 1100px;
+            margin: 0 auto 40px;
+        }
+
+        /* Каждая карточка */
+        .contact-item {
+            background-color: #fafafa;
+            border: 1px solid #e5e5e5;
+            border-radius: 16px;
+            width: 240px;
+            padding: 25px 15px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+        }
+
+        .contact-item h3 {
+            color: #1a1a1a;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .contact-item p {
+            color: #555;
+            margin: 0;
+            font-size: 1rem;
+        }
+
+        /* Нижняя часть с логотипом и текстом */
+        .footer-info {
+            border-top: 1px solid #e5e5e5;
+            padding-top: 30px;
+        }
+
+        .footer-logo {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .footer-info p {
+            color: #777;
+            font-size: 0.95rem;
+        }
+
+        /* ---------- Стили для кликабельных ссылок ---------- */
+        .contact-item a {
+            color: #555;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            color: #ff9900;
+            text-decoration: underline;
+        }
+
+        /* ---------- Анимация появления ---------- */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ---------- Адаптив ---------- */
+        @media (max-width: 768px) {
+            .contacts-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .contact-item {
+                width: 80%;
+                max-width: 320px;
+            }
+
+            .contacts-section h2 {
+                font-size: 1.6rem;
+                color: #ffffff;
+            }
+        }

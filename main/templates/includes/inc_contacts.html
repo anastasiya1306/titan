@@ -1,0 +1,33 @@
+<section class="contacts-section">
+    <h2>Контакты:</h2>
+
+    <div class="contacts-container">
+        <div class="contact-item fade-in">
+            <h3>📞 Телефон</h3>
+             <p><a href="tel:+79999999999">+7 (999) 999-99-99</a></p>
+            <p><a href="tel:+71111111111">+7 (111) 111-11-11</a></p>
+        </div>
+
+        <div class="contact-item fade-in">
+            <h3>✉️ Почта</h3>
+            <p><a href="mailto:pochta@gmail.com">pochta@gmail.com</a></p>
+        </div>
+    </div>
+</section>
+
+<!-- Скрипт анимации -->
+<script>
+  const fadeElems = document.querySelectorAll('.fade-in');
+
+  function showOnScroll() {
+    fadeElems.forEach(elem => {
+      const rect = elem.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 100) {
+        elem.classList.add('visible');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', showOnScroll);
+  showOnScroll();
+</script>
